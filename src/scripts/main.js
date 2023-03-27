@@ -9,7 +9,7 @@
     HTML again.
 */
 
-import { GnomeMercy } from "./GnomeMercy.js";
+import { createHTML } from "./createHTML.js";
 
 const mainContainer = document.querySelector("#container");
 
@@ -20,6 +20,7 @@ const render = () => {
           invoke GnomeMercy component to kick off the conversion
           of state to HTML
       */
+        mainContainer.innerHTML = createHTML()
 };
 
 render();

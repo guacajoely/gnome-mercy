@@ -5,7 +5,7 @@
         state with fetch() call to the API.
 */
 
-const API = "https://uqyoy.sse.codesandbox.io/api";
+const API = "http://localhost:8088"
 
 const applicationState = {
   craftTypes: [],

@@ -5,7 +5,7 @@
     components.
 */
 
-export const GnomeMercy = () => {
+export const createHTML = () => {
   return `
       <h1>Gnome Mercy</h1>
       `;
