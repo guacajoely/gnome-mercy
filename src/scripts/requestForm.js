@@ -1,9 +1,29 @@
 // Responsibility: Generate HTML for the request form. When Submit button is clicked, POST a new request to the API.
 
-import { getCraftTypes } from "./dataAccess.js";
+import { getCraftRequests, getCraftTypes, saveCraftRequest } from "./dataAccess.js";
 
 document.addEventListener("click", (event) => {
   if (event.target.id === "button-request") {
+    // Get what the user typed into the form fields
+    const userName = document.querySelector('input[id="name"]').value
+    const userPurpose = document.querySelector('input[id="purpose"]').value
+    const userType = document.querySelector('select[id="type"]').value
+
+    //we need to assign the ID manually now to attach the letterID to each letterTopic object
+    const currentRequests = getCraftRequests()
+    const newRequestId = currentRequests.length + 1
+
+    // Create a request object out of the user input
+    const newRequestObject = {
+        id: newRequestId,
+        name: userName,
+        intendedUse: userPurpose,
+        craftTypeId: parseInt(userType)
+    }
+
+    // Send the letter to the API for permanent storage
+    saveCraftRequest(newRequestObject)
+    console.log(`request for ${userName} sent`)
   }
 });
 

@@ -16,7 +16,7 @@ export const createCraftRequests = () => {
 
         //make sure there are no matching completions before generating html for each request
           const matchingCompletion = completions.find((completion) => {
-            return request.id === parseInt(completion.reqcraftRequestIduestId)
+            return request.id === parseInt(completion.craftRequestId)
           })
 
           if (!matchingCompletion) {

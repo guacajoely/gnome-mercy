@@ -1,6 +1,7 @@
 // Responsbility: Manage application state and provide functions to change permanent state with fetch() call to the API.
 
 const API = "http://localhost:8088"
+const mainContainer = document.querySelector("#container");
 
 const applicationState = {
   craftTypes: [],
@@ -15,7 +16,6 @@ const applicationState = {
 };
 
 // Once a new craft completion has been saved in the API, add all of the ingredients chosen by the user.
-
 const createCraftIngredients = (completion) => {
   const fetchArray = [];
 
@@ -34,7 +34,7 @@ const createCraftIngredients = (completion) => {
         })
           .then((response) => response.json())
           .then(() => {
-            console.log("Fetch call done");
+            console.log("Craft Ingredient Object posted to DB for each ingredient in userChoices");
           })
       );
     }
@@ -102,4 +102,36 @@ export const fetchIngredients = () => {
 
 export const getIngredients = () => {
   return applicationState.ingredients.map(obj => ({ ...obj }))
+}
+
+export const saveCraftRequest = (craftRequest) => {
+  const fetchOptions = {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(craftRequest)
+  }
+
+  return fetch(`${API}/craftRequests`, fetchOptions)
+      .then(response => response.json())
+      .then(() => {
+          mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+      })
+}
+
+export const saveCompletion = (completionObject) => {
+  const fetchOptions = {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(completionObject)
+  }
+
+  return fetch(`${API}/completions`, fetchOptions)
+      .then(response => response.json())
+      .then(() => {
+          mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+      })
 }
