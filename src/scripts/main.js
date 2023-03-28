@@ -6,7 +6,6 @@ import { createHTML } from "./createHTML.js";
 const mainContainer = document.querySelector("#container");
 
 // Fetch all of the database so that it's stored in application state. After all data is fetched, invoke GnomeMercy component to kick off the conversion of state to HTML
-
 const render = () => {
     fetchCraftTypes()
     .then(() => fetchCompletions())
@@ -23,3 +22,6 @@ const render = () => {
 render();
 
 // Listen for state changes and invoke render() when it does
+mainContainer.addEventListener("stateChanged", customEvent => {
+    render()
+})
