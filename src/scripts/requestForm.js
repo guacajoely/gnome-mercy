@@ -9,7 +9,7 @@ document.addEventListener("click", (event) => {
     const userPurpose = document.querySelector('input[id="purpose"]').value
     const userType = document.querySelector('select[id="type"]').value
 
-    //we need to assign the ID manually now to attach the letterID to each letterTopic object
+    //assign the ID based on the current length of craftRequets
     const currentRequests = getCraftRequests()
     const newRequestId = currentRequests.length + 1
 

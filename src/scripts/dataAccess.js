@@ -132,6 +132,8 @@ export const saveCompletion = (completionObject) => {
   return fetch(`${API}/completions`, fetchOptions)
       .then(response => response.json())
       .then(() => {
+
+          createCraftIngredients(completionObject)
           mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
       })
 }

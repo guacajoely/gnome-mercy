@@ -1,6 +1,6 @@
 // Responsibility: Generate the HTML for the complete requests button, and POST a new item to the API when clicked.
 
-import { saveCompletion, setIngredients } from "./dataAccess.js"
+import { saveCompletion, setIngredients, creat, getCompletions} from "./dataAccess.js"
 
 export const craftButton = () => {
 return`<button class="button" id="button-craft">Finish</button>`
@@ -14,9 +14,14 @@ mainContainer.addEventListener("click", (event) => {
         //GRAB THE IDS FROM THE DROPDOWNS
         const selectedRequest = parseInt(document.querySelector('select[id="craft-requests"]').value)
         const selectedCrafter = parseInt(document.querySelector('select[id="crafter"]').value)
+
+        //assign the ID based on the current length of craftRequets (need it to be assigned manually to pass it into the craftIngredients() function when saving it)
+        const currentCompletions = getCompletions()
+        const newCompletionId = currentCompletions.length + 1
        
         // CREATE A NEW COMPLETION OBJECT
         const completion = {
+            id: newCompletionId,
             craftRequestId: selectedRequest,
             crafterId: selectedCrafter
         }
