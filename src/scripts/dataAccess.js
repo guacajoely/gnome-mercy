@@ -1,9 +1,4 @@
-/*
-    Responsbility:
-
-        Manage application state and provide functions to change permanent
-        state with fetch() call to the API.
-*/
+// Responsbility: Manage application state and provide functions to change permanent state with fetch() call to the API.
 
 const API = "http://localhost:8088"
 
@@ -19,10 +14,8 @@ const applicationState = {
   }
 };
 
-/* 
-  Once a new craft completion has been saved in the API,
-  add all of the ingredients chosen by the user. 
-*/
+// Once a new craft completion has been saved in the API, add all of the ingredients chosen by the user.
+
 const createCraftIngredients = (completion) => {
   const fetchArray = [];
 
@@ -59,3 +52,14 @@ export const setIngredients = (id) => {
   // Step 2: If it does, remove it with delete() method
   // Step 3: If it does not, add it with add() method
 };
+
+
+export const fetchCraftTypes = () => {
+  return fetch(`${API}/craftTypes`)
+      .then(response => response.json())
+      .then((responseArray) => {applicationState.craftTypes = responseArray})
+}
+
+export const getCraftTypes = () => {
+  return applicationState.craftTypes.map(obj => ({ ...obj }))
+}

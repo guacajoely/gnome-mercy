@@ -1,5 +1,1 @@
-/*
-  Responsibility
-    Generate HTML for checkboxes for each ingredient and
-    store each choice in transient state.
-*/
+// Responsibility: Generate HTML for checkboxes for each ingredient and store each choice in transient state.

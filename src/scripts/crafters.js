@@ -1,8 +1,4 @@
-/*
-  Responsibility
-    Generate HTML for the dropdown of crafters. When one is
-    selected, update transient state.
-*/
+// Responsibility: Generate HTML for the dropdown of crafters. When one is selected, update transient state.
 
 export const Crafters = () => {
   const crafters = getCrafters();
