@@ -1,3 +1,16 @@
 .input {
     margin-bottom: 20px;
 }
+
+.request-form{
+    width: 800px;
+}
+
+#type{
+    width: 250px;
+}
+
+#button-request{
+    width: 250px;
+}
+

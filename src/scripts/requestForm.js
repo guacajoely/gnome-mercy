@@ -2,8 +2,8 @@
 
 import { getCraftTypes } from "./dataAccess.js";
 
-document.addEventListener("click", (clickEvt) => {
-  if (clickEvt.target.id === "submitRequest") {
+document.addEventListener("click", (event) => {
+  if (event.target.id === "button-request") {
   }
 });
 
@@ -11,8 +11,8 @@ export const RequestForm = () => {
 
   const craftTypes = getCraftTypes()
 
-  let html = `
-      <div class="field flex column">
+  return`
+      <div class="field flex column request-form">
        <label class="label" for="name">Name</label>
        <input type="text" id="name" class="input">
 
@@ -27,9 +27,7 @@ export const RequestForm = () => {
             }
       </select>
 
-       <button class="button" id="submitRequest">Submit Request</button>
+       <button class="button" id="button-request">Submit Request</button>
       </div>
-      `;
-
-  return html;
-};
+      `
+}

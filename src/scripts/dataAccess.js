@@ -63,3 +63,43 @@ export const fetchCraftTypes = () => {
 export const getCraftTypes = () => {
   return applicationState.craftTypes.map(obj => ({ ...obj }))
 }
+
+export const fetchCrafters = () => {
+  return fetch(`${API}/crafters`)
+      .then(response => response.json())
+      .then((responseArray) => {applicationState.crafters = responseArray})
+}
+
+export const getCrafters = () => {
+  return applicationState.crafters.map(obj => ({ ...obj }))
+}
+
+export const fetchCraftRequests = () => {
+  return fetch(`${API}/craftRequests`)
+      .then(response => response.json())
+      .then((responseArray) => {applicationState.craftRequests = responseArray})
+}
+
+export const getCraftRequests = () => {
+  return applicationState.craftRequests.map(obj => ({ ...obj }))
+}
+
+export const fetchCompletions = () => {
+  return fetch(`${API}/completions`)
+      .then(response => response.json())
+      .then((responseArray) => {applicationState.completions = responseArray})
+}
+
+export const getCompletions = () => {
+  return applicationState.completions.map(obj => ({ ...obj }))
+}
+
+export const fetchIngredients = () => {
+  return fetch(`${API}/ingredients`)
+      .then(response => response.json())
+      .then((responseArray) => {applicationState.ingredients = responseArray})
+}
+
+export const getIngredients = () => {
+  return applicationState.ingredients.map(obj => ({ ...obj }))
+}

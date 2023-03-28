@@ -1,4 +1,5 @@
 @import "./requestForm.css";
+@import "./completeRequests.css";
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
 
 /*Typography
@@ -58,10 +59,14 @@ button {
 }
 
 button {
-	margin-top: .5rem;
+	margin-top: 1rem;
 	cursor: pointer;
 }
 
 main{
 	margin-left: 20px;
+}
+
+header{
+	margin-bottom: 20px;
 }

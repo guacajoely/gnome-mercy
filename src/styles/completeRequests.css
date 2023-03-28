@@ -1,0 +1,31 @@
+#container-completeRequests{
+    border: thin solid black;
+    padding: 20px;
+    width: 750px;
+}
+
+
+#container-ingredients{
+    margin-left: 70px;
+    width: 550px;
+}
+
+#list-ingredients{
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 200px;
+    padding: 0;
+}
+
+.completion{
+    display: flex;
+    align-items: center;
+    margin:5px;
+}
+
+img{
+    margin-right: 10px;
+}
