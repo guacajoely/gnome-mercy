@@ -136,163 +136,25 @@
       "intendedUse": "Enable someone to hate another person",
       "craftTypeId": 2,
       "id": 8
-    },
-    {
-      "id": 9,
-      "name": "test",
-      "intendedUse": "test",
-      "craftTypeId": "1"
-    },
-    {
-      "id": 10,
-      "name": "another Test",
-      "intendedUse": "another Test",
-      "craftTypeId": 2
-    },
-    {
-      "id": 11,
-      "name": "test 3",
-      "intendedUse": "test 3",
-      "craftTypeId": 1
     }
   ],
   "completions": [
     {
-      "craftRequestId": 9,
-      "crafterId": 1,
-      "id": 1
-    },
-    {
-      "craftRequestId": 10,
-      "crafterId": 3,
-      "id": 2
-    },
-    {
-      "craftRequestId": 11,
-      "crafterId": 3,
-      "id": 3
+      "id": 1,
+      "craftRequestId": 4,
+      "crafterId": 1
     }
   ],
   "craftIngredients": [
     {
-      "ingredientId": 15,
-      "completionId": 2,
+      "ingredientId": [
+        "1",
+        "3",
+        "5",
+        "7"
+      ],
+      "completionId": 1,
       "id": 1
-    },
-    {
-      "ingredientId": 13,
-      "completionId": 2,
-      "id": 2
-    },
-    {
-      "ingredientId": 10,
-      "completionId": 2,
-      "id": 3
-    },
-    {
-      "ingredientId": 7,
-      "completionId": 2,
-      "id": 4
-    },
-    {
-      "ingredientId": 3,
-      "completionId": 2,
-      "id": 5
-    },
-    {
-      "ingredientId": 1,
-      "completionId": 3,
-      "id": 6
-    },
-    {
-      "ingredientId": 2,
-      "completionId": 3,
-      "id": 7
-    },
-    {
-      "ingredientId": 12,
-      "completionId": 4,
-      "id": 8
-    },
-    {
-      "ingredientId": 11,
-      "completionId": 4,
-      "id": 9
-    },
-    {
-      "ingredientId": 10,
-      "completionId": 4,
-      "id": 10
-    },
-    {
-      "ingredientId": 11,
-      "completionId": 5,
-      "id": 11
-    },
-    {
-      "ingredientId": 9,
-      "completionId": 5,
-      "id": 12
-    },
-    {
-      "ingredientId": 7,
-      "completionId": 5,
-      "id": 13
-    },
-    {
-      "ingredientId": 6,
-      "completionId": 5,
-      "id": 14
-    },
-    {
-      "ingredientId": 2,
-      "completionId": 6,
-      "id": 15
-    },
-    {
-      "ingredientId": 3,
-      "completionId": 6,
-      "id": 16
-    },
-    {
-      "ingredientId": 4,
-      "completionId": 6,
-      "id": 17
-    },
-    {
-      "ingredientId": 5,
-      "completionId": 6,
-      "id": 18
-    },
-    {
-      "ingredientId": 6,
-      "completionId": 6,
-      "id": 19
-    },
-    {
-      "ingredientId": 7,
-      "completionId": 6,
-      "id": 20
-    },
-    {
-      "ingredientId": 5,
-      "completionId": 7,
-      "id": 21
-    },
-    {
-      "ingredientId": 11,
-      "completionId": 7,
-      "id": 22
-    },
-    {
-      "ingredientId": 7,
-      "completionId": 7,
-      "id": 23
-    },
-    {
-      "ingredientId": 4,
-      "completionId": 7,
-      "id": 24
     }
   ]
 }

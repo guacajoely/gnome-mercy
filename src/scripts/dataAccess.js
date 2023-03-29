@@ -17,8 +17,7 @@ const applicationState = {
 
 // Once a new craft completion has been saved in the API, add all of the ingredients chosen by the user.
 const createCraftIngredients = (completion) => {
-  const fetchArray = [];
-
+  let fetchArray = [];
   applicationState.userChoices.chosenIngredients.forEach(
     (chosenIngredientId) => {
       fetchArray.push(
@@ -34,7 +33,7 @@ const createCraftIngredients = (completion) => {
         })
           .then((response) => response.json())
           .then(() => {
-            console.log("Craft Ingredient Object posted to DB for each ingredient in userChoices");
+            console.log(`craftIngredient Object created for ingredient #${chosenIngredientId}`);
           })
       );
     }
@@ -49,8 +48,13 @@ const createCraftIngredients = (completion) => {
 
 export const setIngredients = (id) => {
   // Step 1: Use the has() method to determine if the Set has the ingredient
-  // Step 2: If it does, remove it with delete() method
+  if(applicationState.userChoices.chosenIngredients.has(id)){
+     // Step 2: If it does, remove it with delete() method
+     //WE WOULD BE DELETING THIS IF IT WAS GETTING UPDATED WITH EACH CHANGE BUT WE'RE JUST GRABBING THE CHECKED CHECKBOXES WHEN THE BUTTON IS CLICKED SO WE'LL JUST RETURN INSTEAD IF IT ALREADY EXISTS 
+     return
+  }
   // Step 3: If it does not, add it with add() method
+  else{applicationState.userChoices.chosenIngredients.add(id)}
 };
 
 
