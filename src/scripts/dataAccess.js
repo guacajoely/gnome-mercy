@@ -39,34 +39,27 @@ const createCraftIngredients = (completion) => {
     }
   );
 
-  console.log(fetchArray)
 
-  //INSTEAD OF PROMISING ALL AT ONCE CAN WE PROMISE ONE AT A TIME???
-  fetchArray.forEach((singleFetch) => {
-    new Promise.any(singleFetch).then(
-      console.log('single promise posted')
-    )
-  })
+  //This is where all the fetches (Promises) all run and resolve
+  Promise.all(fetchArray)
+  .then(() => {
+    applicationState.userChoices.chosenIngredients.clear();
+  });
+};
 
-  applicationState.userChoices.chosenIngredients.clear();
-}
 
-//   //This is where all the fetches (Promises) all run and resolve
-//   Promise.all(fetchArray)
-//   .then(() => {
-//     applicationState.userChoices.chosenIngredients.clear();
-//   });
-// };
+//INSTEAD OF PROMISING ALL AT ONCE CAN WE PROMISE ONE AT A TIME???
+
 
 export const setIngredients = (id) => {
   // Step 1: Use the has() method to determine if the Set has the ingredient
-  if(applicationState.userChoices.chosenIngredients.has(id)){
+  if(applicationState.userChoices.chosenIngredients.has(parseInt(id))){
      // Step 2: If it does, remove it with delete() method
      //WE WOULD BE DELETING THIS IF IT WAS GETTING UPDATED WITH EACH CHANGE BUT WE'RE JUST GRABBING THE CHECKED CHECKBOXES WHEN THE BUTTON IS CLICKED SO WE'LL JUST RETURN INSTEAD IF IT ALREADY EXISTS 
      return
   }
   // Step 3: If it does not, add it with add() method
-  else{applicationState.userChoices.chosenIngredients.add(id)}
+  else{applicationState.userChoices.chosenIngredients.add(parseInt(id))}
 };
 
 
