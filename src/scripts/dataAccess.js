@@ -39,12 +39,24 @@ const createCraftIngredients = (completion) => {
     }
   );
 
-  // This is where all the fetches (Promises) all run and resolve
-  Promise.all(fetchArray).then(() => {
-    console.log("All fetches complete");
-    applicationState.userChoices.chosenIngredients.clear();
-  });
-};
+  console.log(fetchArray)
+
+  //INSTEAD OF PROMISING ALL AT ONCE CAN WE PROMISE ONE AT A TIME???
+  fetchArray.forEach((singleFetch) => {
+    new Promise.any(singleFetch).then(
+      console.log('single promise posted')
+    )
+  })
+
+  applicationState.userChoices.chosenIngredients.clear();
+}
+
+//   //This is where all the fetches (Promises) all run and resolve
+//   Promise.all(fetchArray)
+//   .then(() => {
+//     applicationState.userChoices.chosenIngredients.clear();
+//   });
+// };
 
 export const setIngredients = (id) => {
   // Step 1: Use the has() method to determine if the Set has the ingredient
