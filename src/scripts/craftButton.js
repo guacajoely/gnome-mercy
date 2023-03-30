@@ -15,9 +15,9 @@ mainContainer.addEventListener("click", (event) => {
         const selectedRequest = parseInt(document.querySelector('select[id="craft-requests"]').value)
         const selectedCrafter = parseInt(document.querySelector('select[id="crafter"]').value)
 
-         //grab ALL checked ingredient checkboxes 
-         const checkedIngredients = document.querySelectorAll("input[name='ingredient']:checked")
-         const arrayOfUseringredients = Array.from(checkedIngredients).map(x => x.value)
+        //grab ALL checked ingredient checkboxes 
+        const checkedIngredients = document.querySelectorAll("input[name='ingredient']:checked")
+        const arrayOfUseringredients = Array.from(checkedIngredients).map(x => x.value)
 
         //assign the ID based on the current length of craftRequets (need it to be assigned manually to pass it into the craftIngredients() function when saving it)
         const currentCompletions = getCompletions()
